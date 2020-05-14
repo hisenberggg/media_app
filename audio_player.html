@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Audio player</title>
+
+    <style>
+    	@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+      body{
+        overflow:scroll;
+        margin: 0;
+        padding: 0;
+        
+      }
+
+      .header{
+        background:cyan;
+        text-align: center;
+      }
+      .container {
+        margin: 0;
+        padding: 0;
+        font-family: 'Acme', sans-serif;
+        border: 1px solid black;
+        height: 247px;
+        background-image: linear-gradient(#9796f0,#fbc7d4);
+        overflow:scroll;
+      }
+      /*#9796f0,#fbc7d4 purple
+      #00467f,#a5cc82  blue yellow
+
+      */
+      
+      .back_btn{       
+        display:inline-block;
+        padding:0;
+        margin:0px;
+        text-align:center; 
+        position:absolute;
+      }
+      
+      #btnp {
+        color:white;
+        margin:0;
+        padding:0;
+        display:inline-block;
+        background:#000;
+        border:1px solid #111;
+        width:113px;
+        position:relative;
+      }
+      #btnn {
+        color:white;
+        margin:0;
+        padding:0;
+        display:inline-block;
+        background:#000;
+        border:1px solid #111;
+        width:113px;
+        left:2px;
+        position:relative;
+      }
+      h6{
+        margin:2px;
+        font-size:15px;
+        display:inline-block;
+      	color: #000;
+      }
+
+      .info{
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 0px;
+        padding: 5px;
+        height: 100px;
+        background: #999;
+        border: 2px solid #000;
+      }
+     .control{
+       
+      }
+
+      .prog{
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: 5px;
+        width:200px;
+        background-color: #f00;
+      }
+
+      .btns{
+        display: flex;
+        justify-content: center;
+      }
+      .b_bw{
+        border-width: 1px ;
+        width:50px;
+        height: 50px;
+        margin-top: 10px;
+        margin-right: 5px;
+        margin-left: 10px;
+        border-radius: 50%;
+        background: url("icons/backwardbtn.png");
+        display: inline-block;
+      
+      
+        
+      }
+      .b_play{
+        border-width: 1px;
+        width:50px;
+        height: 50px;
+        margin-top: 10px;
+        margin-right: 7px;
+        margin-left: 7px;
+        border-radius: 50%;
+        background: url("icons/playbtn1.png");
+        display: inline-block;
+      
+        
+        
+      }
+      .b_fr{
+        border-width: 1px;
+        width:50px;
+        height: 50px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 5px;
+        border-radius: 50%;
+        background: url("icons/forwardbtn.png");
+        display: inline-block;
+        
+    
+      
+      }
+    </style>
+
+    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+         so we use a script file. -->
+    <script src="p2.js" defer></script>
+     
+    
+    
+
+  </head>
+
+  <body>
+  <div class="header">Audio PLayer
+    
+  </div>  
+  <div class="container"> 
+    <div class="info">
+      text/image
+    </div>
+    <div>
+      <h6>&emsp;0:00</h6>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<h6>0:00</h6>
+      <progress value="10" max="100" class="prog">    
+    </div>
+    <div class="btns">
+    <button class="b_bw"></button>
+    <button class="b_play"></button>
+    <button class="b_fr"></button>
+    </div>
+    <button class="b_vol"></button>
+  
+   
+  </div>    <!-- container -->
+   <div class="back_btn">
+     <button id="btnp" onClick="window.location.href='index.html'">prev Page</button>
+     <button id="btnn" onClick="window.location.href='index.html'">next Page</button>
+   </div>   
+  </body>
+
+</html>
+
+
+<!-- 
+<audio id="a1"><source src="mp3s/audio2.mp3" type="audio/mpeg" />404</audio>
+      <button class="controls" onclick="document.getElementById('a1').currentTime -=10"><i class="fa fa-backward"></i></button>
+        <button  class="controls" onclick="document.getElementById('a1').play()"><i class="fa fa-play"></i></button>
+        <button class="controls" onclick="document.getElementById('a1').pause()"><i class="fa fa-pause"></i></button>
+        <button class="controls" onclick="document.getElementById('a1').currentTime +=10"><i class="fa fa-forward"></i></button>
+        <h6>vol:</h6><button class="controls" onclick="document.getElementById('a1').volume -=0.1"><i class="fa fa-minus"></i></button>
+        <button class="controls" onclick="document.getElementById('a1').volume +=0.1"><i class="fa fa-plus"></i></button>
+-->
