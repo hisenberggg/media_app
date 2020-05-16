@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Audio player</title>
+
+    <style>
+    	@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+      body{
+        overflow:hidden;
+        margin: 0;
+        padding: 0;
+        
+      }
+
+      .header{
+        background:cyan;
+        text-align: center;
+      }
+      .container {
+        margin: 0;
+        padding: 0;
+        font-family: 'Acme', sans-serif;
+        border: 1px solid black;
+        height: 252px;
+        background-image: linear-gradient(#9796f0,#fbc7d4);
+        overflow:hidden;
+      }
+      /*#9796f0,#fbc7d4 purple
+      #00467f,#a5cc82  blue yellow
+
+      */
+
+      .bi{
+    width: 80px;
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+  }
+  .b{
+    float: left;
+    color: #000;
+  }
+      
+      
+      }
+      h6{
+        margin:2px;
+        font-size:15px;
+        display: inline-block;
+        float: left;
+      }
+
+      .info{
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 0px;
+        padding: 5px;
+        height: 80px;
+        background: #999;
+        border: 2px solid #000;
+      }
+     .control{
+       
+      }
+
+      .prog{
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: 5px;
+        width:200px;
+        top: -20px;
+        background-color: #f00;
+        position: relative;
+      }
+
+      .btns{
+        display: flex;
+        justify-content: center;
+        top: -20px;
+        position: relative;
+      }
+      .b_bw{
+        border-width: 1px ;
+        width:50px;
+        height: 50px;
+        margin-top: 10px;
+        margin-right: 5px;
+        margin-left: 10px;
+        border-radius: 50%;
+        background: url("icons/backwardbtn.png");
+        display: inline-block;
+      
+      
+        
+      }
+      .b_play{
+        border-width: 1px;
+        width:50px;
+        height: 50px;
+        margin-top: 10px;
+        margin-right: 7px;
+        margin-left: 7px;
+        border-radius: 50%;
+        background: url("icons/playbtn1.png");
+        display: inline-block;
+      
+        
+        
+      }
+      .b_fr{
+        border-width: 1px;
+        width:50px;
+        height: 50px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 5px;
+        border-radius: 50%;
+        background: url("icons/forwardbtn.png");
+        display: inline-block;
+        
+    
+      
+      }
+    </style>
+
+    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+         so we use a script file. -->
+    <script src="p2.js" defer></script>
+     
+    
+    
+
+  </head>
+
+  <body>
+  <div class="header">Audio PLayer
+    
+  </div>  
+  <div class="container"> 
+    <div class="info">
+      text/image
+    </div>
+    <div>
+      <h6>&emsp;0:00&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0:00</h6>
+      <progress value="10" max="100" class="prog">    
+    </div>
+    <audio id="a1"> <source src="mp3s/audio2.mp3" type="mpeg"></audio>
+    <div class="btns">
+    <button class="b_bw" onclick="document.getElementById('a1').currentTime-=10"></button>
+    <button class="b_play" onclick="document.getElementById('a1').play()"></button>
+    <button class="b_fr" onclick="document.getElementById('a1').currentTime+=10"></button>
+    </div>
+    
+  </div>    <!-- container -->
+   
+<div class="b">
+  <button onclick="window.location.href='audio_edit(1).html'" class="bi">text1</button>
+  </div>
+  <div class="b">
+  <button onclick="window.location.href='#'" class="bi">text2</button>
+  </div>
+  <div class="b">
+  <button onclick="window.location.href='#'" class="bi">text3</button>
+</div>
+
+  </body>
+
+</html>
+
+
+<!-- 
+<audio id="a1"><source src="mp3s/audio2.mp3" type="audio/mpeg" />404</audio>
+      <button class="controls" onclick="document.getElementById('a1').currentTime -=10"><i class="fa fa-backward"></i></button>
+        <button  class="controls" onclick="document.getElementById('a1').play()"><i class="fa fa-play"></i></button>
+        <button class="controls" onclick="document.getElementById('a1').pause()"><i class="fa fa-pause"></i></button>
+        <button class="controls" onclick="document.getElementById('a1').currentTime +=10"><i class="fa fa-forward"></i></button>
+        <h6>vol:</h6><button class="controls" onclick="document.getElementById('a1').volume -=0.1"><i class="fa fa-minus"></i></button>
+        <button class="controls" onclick="document.getElementById('a1').volume +=0.1"><i class="fa fa-plus"></i></button>
+-->
