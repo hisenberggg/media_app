@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Category page</title>
+    <link rel="stylesheet" type="text/css" href="allstyle.css">
+
+    <!--
+    <style>
+    	@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+      body{
+        overflow:hidden;
+        margin: 0;
+        padding: 0;
+        
+      }
+
+      .header{
+        background:cyan;
+        text-align: center;
+      }
+      /*.container {
+        margin: 0;
+        padding: 0;
+        font-family: 'Acme', sans-serif;
+        border: 1px solid black;
+        height: 247px;
+        overflow:scroll;
+      }*/
+
+      .container {
+        margin: 0;
+        padding: 0;
+        font-family: 'Acme', sans-serif;
+        border: 1px solid black;
+        height: 252px;
+        overflow:hidden;
+        background: url(icons/bg9.png) ;
+      }
+      
+      button.c1{
+        width: 238px;
+        height: 50px;
+        margin-left:0px;
+        margin-right:0px;
+        margin-top:0px;
+        margin-bottom:0px;
+        background: transparent;
+        background-repeat: no-repeat;;
+        /*background: url(icons/bg9.png) ;*/
+        padding:0;
+        overflow: float clearing;
+        border: 1px solid black;
+      }
+      button.c1:hover{
+        border: 1px solid #000;
+        box-shadow: inset 0px 0px 10px rgba(0,0,0,.5);
+      }
+
+      button.c1:focus{
+        border: 1px solid #000;
+        box-shadow: inset 0px 0px 10px rgba(0,0,0,.5);
+      }
+      
+      .bi{
+        width: 80px;
+        border-width: 0;
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #fff;
+      }
+      .b{
+        float: left;
+        color: #000;
+        }
+      h6{
+        margin:2px;
+        font-size:15px;
+        display:inline-block;
+      	color: #000;
+      
+      }
+     
+       
+      form.search input[type=text]{
+        width:210px;
+      }
+
+      form i{position: absolute;}
+
+      form.search input[type=submit]{
+        margin: 0;
+        padding: 0;
+        width:20px;
+        border-width: 0;
+        background-color: transparent;
+      }
+      form.search input[type=submit]:focus{
+        background-color: #fa0000;
+      }
+    </style> -->
+
+    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+         so we use a script file. -->
+
+  </head>
+
+  <body>
+  <div class="header">Category
+    
+  </div>  
+  <div class="container" id="cont"> 
+  <form action="action_page.php" class="search">
+      <input class='c1' id="1" tabindex="1" type="text" placeholder="Search for names.." onkeydown="myFunction()">
+      <!--<i class="fa fa-search"></i><input id="2" type="submit" value="" class='c1' tabindex="2">-->
+  </form>  
+  
+
+            <!-- This code is in the public domain. Enjoy! 
+        <button class='c1'   tabindex="3" onClick="window.location.href='audio_edit(1).html'"><h6>Google+</h6></button>
+        <button class='c1'  tabindex="4" onclick="window.location.href='audio_edit(1).html'"><h6>Demo Slam</h6></button>
+        <button class='c1'  tabindex="5" onclick="window.location.href='audio_edit(1).html'"><h6>Gone Google</h6></button>
+        <button class='c1'  tabindex="6" onclick="window.location.href='audio_edit(1).html'"><h6>Zeitzeist</h6></button>
+        <button class='c1'  tabindex="7" onclick="window.location.href='audio_edit(1).html'"><h6>April Fool's 2013</h6></button> -->
+   
+  </div>    <!-- container -->
+   
+<div class="b">
+  <button onclick="window.location.href='#'" class="bi">Back</button>
+  </div>
+  <div class="b">
+  <button onclick="window.location.href='#'" class="bi">SELECT</button>
+  </div>
+  <div class="b">
+  <button onclick="window.location.href='#'" class="bi">text3</button>
+</div>
+
+
+<!--<script src="p2.js" defer></script>-->
+<script src="jsparsing.js" defer></script>
+<script src="softkey.js" defer></script>
+  </body>
+
+</html>
+
+
+<!-- 
+<audio id="a1"><source src="mp3s/audio2.mp3" type="audio/mpeg" />404</audio>
+      <button class="controls" onclick="document.getElementById('a1').currentTime -=10"><i class="fa fa-backward"></i></button>
+        <button  class="controls" onclick="document.getElementById('a1').play()"><i class="fa fa-play"></i></button>
+        <button class="controls" onclick="document.getElementById('a1').pause()"><i class="fa fa-pause"></i></button>
+        <button class="controls" onclick="document.getElementById('a1').currentTime +=10"><i class="fa fa-forward"></i></button>
+        <h6>vol:</h6><button class="controls" onclick="document.getElementById('a1').volume -=0.1"><i class="fa fa-minus"></i></button>
+        <button class="controls" onclick="document.getElementById('a1').volume +=0.1"><i class="fa fa-plus"></i></button>
+-->

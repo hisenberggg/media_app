@@ -1,0 +1,246 @@
+
+
+"use strict";
+
+		var l1=[];
+		var l2=[];
+		var l3=[];
+		var len=[];
+		var l4=[];
+		var l5=[];
+		var m;
+function reply_click(id)										//Function for a button click in subjects page
+
+{
+		console.log("Hii1");
+		var a=id;
+		localStorage.setItem("storageName",a);
+			window.location.href="bookname.html";
+		
+}	
+function reply_click1(id)								//Function for a button click in bookname page
+{	
+	console.log("Hii2");
+	var b=id;
+	localStorage.setItem("storageName1",b);
+	window.location.href="chapter.html";
+}
+function reply_click2(id,sub)         //Function for a button click in search
+{	
+	console.log(sub);
+	console.log(id);
+	var a=sub;
+	var b=id;
+	localStorage.setItem("storageName",a);
+	localStorage.setItem("storageName1",b);
+	window.location.href="chapter.html";
+}
+
+fetch("./class1.json")
+	.then(function(resp) {
+		return resp.json();
+	})
+	.then(function(d){
+
+		
+		let d1=d.data;
+
+		
+		console.log(d);
+		
+		//console.log(d1.length);
+		for(let i=0;i<d1.length;i++)
+		{	l2.push(i+1);
+			//console.log(d1[i]);
+			
+			l1.push(d1[i].subject);
+			let d2=d1[i].details.length;
+			l3.push(i+1);
+			len.push(d1[i].details.length);
+			for(let j=0;j<d2;j++)
+			{
+
+				//console.log(d1[i].details[j]);
+				
+				l2.push(d1[i].details[j].bookname);
+				l4.push(d1[i].details[j].bookname);
+
+				let d3=d1[i].details[j].bookdata.length;
+				
+				l3.push(d1[i].details[j].bookdata);
+				for(let k=0;k<d3;k++)
+				{
+					let a=d1[i].details[j].bookdata[k];
+
+					
+
+					
+
+				}
+			}
+			
+		}
+			
+			console.log(l4);
+			console.log(len);
+
+			let k=0;
+			for(let i=0;i<len.length;i++)
+			{
+
+				for(let j=0;j<len[i];j++)
+				{
+					l5.push(i+1);
+					l5.push(j+1);
+
+					l5.push(l4[k]);
+					k=k+1;
+				}
+
+			}
+		
+			console.log(l5);
+
+				if(window.location.href== "http://localhost/inten/subject.html"){
+
+				var obj=document.getElementById("bt");
+				for(let i=0;i<l1.length;i++)
+				{
+					obj.innerHTML+="<button  id=\'"+(i+1)+"\' class=\'nbtn\' tabindex=\'"+(i+1)+"\' onClick=\"reply_click(this.id)\">"+l1[i]+"</button>"
+					console.log(obj.innerHTML);
+					
+						
+					}
+					document.getElementById("1").focus();
+
+
+			}
+				if(window.location.href== "http://localhost/inten/bookname.html"){
+								let id=localStorage.getItem("storageName");
+								let b=l2.indexOf(parseInt(id))+1
+								var obj1=document.getElementById("bt1");
+								let j=0;
+								for(let i=b;i<b+len[id-1];i++)
+								{
+
+
+									obj1.innerHTML+="<button  id=\'"+(j+1)+"\' class=\'nbtn\' tabindex=\'"+(j+1)+"\' onClick=\"reply_click1(this.id)\">"+l2[i]+"</button>"
+									j=j+1;
+								}
+								document.getElementById("1").focus();
+				}
+
+
+				if(window.location.href== "http://localhost/inten/chapter.html"){
+						let id1=localStorage.getItem("storageName");
+						let id2=localStorage.getItem("storageName1");
+						let l=l3[l3.indexOf(parseInt(id1))+parseInt(id2)].length;
+						let k=l3.indexOf(parseInt(id1))+parseInt(id2);
+						console.log(l);
+						var obj2=document.getElementById("bt2");
+						for(let i=0;i<l;i++)
+						{
+								obj2.innerHTML+="<button  id=\'"+(i+1)+"\' class=\'nbtn\' tabindex=\'"+(i+1)+"\' onClick=\'window.location.href="+(l3[k][i].booklink)+"\'>"+ l3[k][i].chapterno+"  "+l3[k][i].chaptername+"</button>"
+						}
+
+						document.getElementById("1").focus();
+				
+
+					
+
+					}
+
+					var divi=document.getElementById("bt3");
+					var btn=divi.getElementsByTagName("button");
+					
+					const searchBar=document.forms["search-books"].querySelector("input");
+					searchBar.addEventListener("keyup",function(e){
+							var obj3=document.getElementById("bt3");
+							const term = e.target.value.toLowerCase();
+							var val=document.getElementById("1").value;
+							if(e.key=="ArrowUp" || e.key=="ArrowDown")
+                            {
+
+                            	if(term=="")
+                            	{
+                            		console.log("Cursoring part1");
+                            	}
+                            	else
+                            	{
+                            	
+                            		
+                            		document.getElementById("1").value="";
+                            		document.getElementById("1").value=val;
+
+                            	}
+                            	 
+                            }
+                            else if(e.key=="Backspace")
+                            {
+                            	if(term=="")
+                            	{
+
+                            			for(let i=0;i<btn.length;i++)
+										{
+											btn[i].style.display="none";
+											btn[i].className="temp";
+
+										}
+									for(let i=0;i<4;i++)
+							            {
+								            btn[i].style.display="";
+								            btn[i].className="nbtn";
+
+							            }	
+                            	}
+                            	else
+                            	{
+                            		for(let i=0;i<btn.length;i++)
+										{
+											btn[i].style.display="none";
+											btn[i].className="temp";
+
+										}	
+										let n=1;
+										for(let i=0;i<(l4.length);i++)
+										{
+											if(l4[i].toLowerCase().indexOf(term)!= -1)
+												{	
+													n=n+1;
+													m=l5.indexOf(l4[i]);
+													obj3.innerHTML+="<button  name=\'"+(l5[m-2])+"\' id=\'"+(l5[m-1])+"\' class=\'nbtn\' tabindex=\'"+(n)+"\' onClick=\"reply_click2(this.id,l5[m-2])\">"+l4[i]+"</button>"
+												}
+										}
+
+                            	}
+                            }
+                            else
+                            {
+                            	for(let i=0;i<btn.length;i++)
+								{
+									btn[i].style.display="none";
+									btn[i].className="temp";
+
+
+								}
+								let n=1;
+								for(let i=0;i<(l4.length);i++)
+									{
+										if(l4[i].toLowerCase().indexOf(term)!= -1)
+										{		n=n+1;
+												m=l5.indexOf(l4[i]);
+												obj3.innerHTML+="<button  name=\'"+(l5[m-2])+"\' id=\'"+(l5[m-1])+"\' class=\'nbtn\' tabindex=\'"+(n)+"\' onClick=\"reply_click2(this.id,l5[m-2])\">"+l4[i]+"</button>"
+										}
+
+                            		}
+							}
+							
+							
+						
+					})
+
+
+							
+
+	});
+

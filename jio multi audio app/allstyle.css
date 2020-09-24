@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+      body{
+        overflow:hidden;
+        margin: 0;
+        padding: 0;
+        
+      }
+
+      .header{
+        margin-left: 5px;
+        margin-right: 5px;
+        background:#6600ff;
+        text-align: center;
+        color: white;
+      }
+      /*.container {
+        margin: 0;
+        padding: 0;
+        font-family: 'Acme', sans-serif;
+        border: 1px solid black;
+        height: 247px;
+        overflow:scroll;
+      }*/
+
+      .container {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 0;
+        font-family: 'Acme', sans-serif;
+        border: 1px solid black;
+        height: 252px;
+        overflow:hidden;
+        background-color: #f2f2f2;
+        /*background: url(icons/bg9.png) ;*/
+      }
+
+      
+      button.c1{
+        width: 238px;
+        height: 50px;
+        margin-left:0px;
+        margin-right:0px;
+        margin-top:0px;
+        margin-bottom:0px;
+        background: transparent;
+        background-repeat: no-repeat;
+        text-align: left;
+        border-width: 0;
+        /*background: url(icons/bg9.png) ;*/
+        padding:0;
+        overflow: float clearing;
+        /*border: 1px solid black;*/
+      }
+      button.c1:hover{
+        border: 1px solid #000;
+        box-shadow: inset 0px 0px 10px rgba(0,0,0,.5);
+      }
+
+      button.c1:focus{
+        border: 1px solid #000;
+        background-color: #b366ff;
+        box-shadow: inset 0px 0px 10px rgba(0,0,0,.5);
+      }
+      
+      .bi{
+        width: 80px;
+        height: 25px;
+        border-width: 0;
+        margin:0;
+        padding: 0;
+        background-color: #b3b3b3;
+        color: #000;
+      }
+      .b{
+        float: left;
+        color: #000;
+        }
+      h6{
+        margin:2px;
+        font-size:15px;
+        display:inline-block;
+      	color: #000;
+      
+      }
+     
+       
+      form.search input[type=text]{
+        width:195px;
+      }
+
+      form i{position: absolute;}
+
+      form.search input[type=submit]{
+        margin: 0;
+        padding: 0;
+        width:20px;
+        border-width: 0;
+        background-color: transparent;
+      }
+      form.search input[type=submit]:focus{
+        background-color: #fa0000;
+      }

@@ -1,0 +1,115 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var count=1;
+function nav1(move) {
+  const currentIndex1 = document.activeElement.tabIndex;
+	const next1 = currentIndex1 + move;
+	console.log(next1);
+	const items1 = document.querySelectorAll('.s1');
+	 const targetElement1 = items1[next1-1];
+
+		window.scrollBy(0,-60);
+  		targetElement1.focus();
+	}
+ 
+function nav2(m){
+	console.log(m);
+
+const currentIndex = document.activeElement.tabIndex;
+console.log(currentIndex);
+const next = currentIndex + m;
+console.log(next);
+	const items = document.querySelectorAll('.nbtn');
+	 const targetElement = items[next-2];
+		window.scrollBy(0,60);
+  		targetElement.focus();
+	}
+
+
+
+
+function handleKeyDown(evt) {
+  switch(evt.key) {
+    case 'ArrowUp':
+      count=count-1;
+	if(count==1){
+      nav1(-1);
+      	}
+	else{
+	nav2(-1);
+	}
+      break;
+    case 'ArrowDown':
+      count=count+1;
+      if(count==1){
+      nav1(1);
+      	}
+	else{
+	nav2(1);
+	}
+      
+      break;
+    case 'ArrowRight':
+		x=document.getElementById("1");
+		y=x.selectionStart;
+		x.selecionStart=y+1;
+		console.log(y);
+	
+        
+      break;
+    case 'ArrowLeft':
+		x=document.getElementById("1");
+		y=x.selectionStart;
+		x.selecionStart=y-1;
+		console.log(y);
+
+      break;
+    case 'Enter':
+	var a=count;
+	count=1;
+	console.log(a);
+	buttonClicked=document.getElementById(a);
+
+	
+	document.getElementById(a).click();
+	break;
+    case 'SoftRight':
+	buttonClicked=document.getElementById('btn');
+	btn.style.background="white";
+	btn.style.color="black";
+	document.getElementById('btn').click();
+	
+	break;
+
+    case 'SoftLeft':
+	buttonClicked=document.getElementById('btn1');
+	btn1.style.background="white";
+	btn1.style.color="black";
+	document.getElementById('btn1').click();
+	break;
+    
+
+  }
+};
+
+
+document.addEventListener('keydown',handleKeyDown);
+
+
+
+
